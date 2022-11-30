@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+#main-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 6%;
+      
+}
+body {
+  margin: 0;
+    
+}
+#Answers {
+    flex: 1 0 200px;
+    padding: 10px;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+}
+.ans {
+    padding: 20px;
+    background-color: blueviolet;
+    color: bisque;
+}
