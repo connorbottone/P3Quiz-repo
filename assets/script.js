@@ -1,5 +1,5 @@
 
-const questions = [
+var questions = [
     {
         q: 0,
         question: "What is the capital of Alabama?",
@@ -19,13 +19,13 @@ const questions = [
         answer: "Springfield"
     },
     {
-        q: 3,
+        q:3,
         question: "What is the capital of Kentucky",
         choices: ["Frankfort", "Topeka", "Hartford", "Madison"],
         answer: "Frankfort"
     },
     {
-        q: 4,
+        q:4,
         question: "What is the capital of Iowa",
         choices: ["Des Moines", "Concord", "Jackson", "Iowanis"],
         answer: "Des Moines"
@@ -80,24 +80,36 @@ function timer() {
 //     } else {
 
 //     }
-
-function questionDisplay(id) {
-    var results= document.getElementById("Results");
-    results[0].innerText= "";
+// q=[0]
+function questionDisplay(q) {
+    // var results= document.getElementById("Results");
+    // results[0].innerText= "";
 //grabing questioncnt from html
     var quest = document.getElementById("questions-container");
 // defiing the text of id we pulled to equal question
-    quest.innerText = questions[q].question;
+    quest.innerText = questions.q[0].question;
     // grbing are anwer slots from html and declaring variable
     var ans1= document.getElementById('ans1');
     var ans2= document.getElementById('ans2');
     var ans3= document.getElementById('ans3');
     var ans4= document.getElementById('ans4');
 // giving a value to the elemnts we pulled 
-    ans1.innerText = questions[q].choices[0]
-    ans1.innerText = questions[q].choices[1]
-    ans1.innerText = questions[q].choices[2]
-    ans1.innerText = questions[q].choices[3]
+    ans1.innerText = questions.q[0].choices[0]
+    ans2.innerText = questions.q[0].choices[1]
+    ans3.innerText = questions.q[0].choices[2]
+    ans4.innerText = questions.q[0].choices[3]
+    
+    
+
+    for (let i = 0; i < questions.length; i++) {
+      q++;  
+        
+    }
+    if (timer() >=60) {
+        
+        
+    }
+
 
 }
 
@@ -111,6 +123,7 @@ startGame.addEventListener("click", function (event) {
     document.getElementById("Gamescreen").classList.remove("hide")
     document.getElementById("Gamescreen").classList.add("show")
     timer()
+    questionDisplay(q)
 
     // display()
     // if (element.matches(".ans")) {
