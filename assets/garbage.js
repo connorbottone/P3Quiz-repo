@@ -56,7 +56,16 @@
         </div>
 
 
-
+function displayq() {
+    //     ('#questions-container')= questions[0].question }
+    
+    //      for (let i = 0; i < questions.length; i++) {
+    
+    //         const bttn = document.createElement('button')
+    //         bttn.setAttribute('class', "btn-prm");
+    //         bttn.textContent = choices[i]
+    //         answer.append(abv)
+}
 for (let i = 0; i < choises.length; i++) {
     //create buttons
     const answerButton = document.createElement("button");

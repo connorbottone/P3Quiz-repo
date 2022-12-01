@@ -1,37 +1,37 @@
 
 var questions = [
     {
-        q: 0,
+
         question: "What is the capital of Alabama?",
         choices: ["Montgomery", "Tide city", "Santa Fe", "Cheyenne"],
         answer: "Montgomery"
     },
     {
-        q: 1,
+
         question: "What is the capital of Delaware",
         choices: ["Dover", "Salem", "Augusta", "Lansing"],
         answer: "Dover"
     },
     {
-        q: 2,
+
         question: "What is the capital of Illinois",
         choices: ["Springfield", "Olympia", "Pierre", "Raleigh"],
         answer: "Springfield"
     },
     {
-        q:3,
+
         question: "What is the capital of Kentucky",
         choices: ["Frankfort", "Topeka", "Hartford", "Madison"],
         answer: "Frankfort"
     },
     {
-        q:4,
+
         question: "What is the capital of Iowa",
         choices: ["Des Moines", "Concord", "Jackson", "Iowanis"],
         answer: "Des Moines"
     },
     {
-        q: 5,
+
         question: "What is the capital of New Jersey",
         choices: ["Trenton", "Newark", "Warren", "Lincoln"],
         answer: "Trenton"
@@ -63,52 +63,44 @@ function timer() {
     }, 1000);
 
 }
-// function displayq() {
-//     ('questions-container')= questions[0].question }
 
-//      for (let i = 0; i < choices.length; i++) {
+// function questionDisplay() {
 
-//         const abv = document.createElement('button')
-//         abv.setAttribute('class', "btn-prm");
-//         abv.textContent = choices[i]
-//         answer.append(abv)
-//         // const ele = choices[i];
-//         //a
-//         //
+//  ('#questions-container')= questions[0].question 
 
-//      }
-//     } else {
+//  for (let i = 0; i < questions.length; i++) {
 
-//     }
-// q=[0]
-function questionDisplay(q) {
-    // var results= document.getElementById("Results");
-    // results[0].innerText= "";
-//grabing questioncnt from html
-    var quest = document.getElementById("questions-container");
-// defiing the text of id we pulled to equal question
-    quest.innerText = questions.q[0].question;
+//     const bttn = document.createElement('button')
+//     bttn.setAttribute('class', "btn-prm");
+//     bttn.textContent = choices[i]
+//     answer.append(abv)
+
+
+//  }
+
+function questionDisplay() {
+
+    for (let i = 0; i <= questions.length; i++) {
+        questions[0]++;
+    }
+    if (timer() >= 60) {
+
+
+    }
+    // making a varible quest
+    var quest = document.getElementById('questions-container');
+    // defiing the text of id we pulled to equal question
+    quest.innerText = questions[0].question;
     // grbing are anwer slots from html and declaring variable
-    var ans1= document.getElementById('ans1');
-    var ans2= document.getElementById('ans2');
-    var ans3= document.getElementById('ans3');
-    var ans4= document.getElementById('ans4');
-// giving a value to the elemnts we pulled 
-    ans1.innerText = questions.q[0].choices[0]
-    ans2.innerText = questions.q[0].choices[1]
-    ans3.innerText = questions.q[0].choices[2]
-    ans4.innerText = questions.q[0].choices[3]
-    
-    
-
-    for (let i = 0; i < questions.length; i++) {
-      q++;  
-        
-    }
-    if (timer() >=60) {
-        
-        
-    }
+    var ans1 = document.getElementById('ans1');
+    var ans2 = document.getElementById('ans2');
+    var ans3 = document.getElementById('ans3');
+    var ans4 = document.getElementById('ans4');
+    // giving a value to the elemnts we pulled 
+    ans1.innerText = questions[0].choices[0]
+    ans2.innerText = questions[0].choices[1]
+    ans3.innerText = questions[0].choices[2]
+    ans4.innerText = questions[0].choices[3]
 
 
 }
@@ -123,7 +115,7 @@ startGame.addEventListener("click", function (event) {
     document.getElementById("Gamescreen").classList.remove("hide")
     document.getElementById("Gamescreen").classList.add("show")
     timer()
-    questionDisplay(q)
+    questionDisplay()
 
     // display()
     // if (element.matches(".ans")) {
