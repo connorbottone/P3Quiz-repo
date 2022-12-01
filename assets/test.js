@@ -4,11 +4,11 @@ var questions = [
 
         question: "What is the capital of Alabama?",
         choices: [{ text: "Montgomery", isRight: true },
-                  { text: "Tide city", isRight: false },
-                  { text: "Santa Fe", isRight: false },
-                  { text: "Cheyenne", isRight: false },
-                ]
-             
+        { text: "Tide city", isRight: false },
+        { text: "Santa Fe", isRight: false },
+        { text: "Cheyenne", isRight: false },
+        ]
+
 
     },
     {
@@ -16,10 +16,10 @@ var questions = [
 
         question: "What is the capital of Delaware",
         choices: [{ text: "Dover", isRight: true },
-                  { text: "Salem", isRight: false },
-                  { text: "Augusta", isRight: false },
-                  { text: "Lansing", isRight: false },
-                ]
+        { text: "Salem", isRight: false },
+        { text: "Augusta", isRight: false },
+        { text: "Lansing", isRight: false },
+        ]
 
     },
     // {
@@ -76,12 +76,12 @@ function timer() {
 
 //function to display questions
 function displayQ(id) {
-   
-   
-   var messageBox= document.querySelector("messageBox");
-   messageBox.innerText="";
 
-   var quest = document.getElementById('questions-container');
+
+    var messageBox = document.querySelector("messageBox");
+    messageBox.innerText = "";
+
+    var quest = document.getElementById('questions-container');
     // defiing the text of id we pulled to equal question
     quest.innerText = questions[id].question;
     // grbing are anwer slots from html and declaring variable
@@ -100,35 +100,127 @@ function displayQ(id) {
     ans3.value = questions[id].choices[2].isRight;
     ans4.value = questions[id].choices[3].isRight;
 
-    var slectionTf= "";
-    var id = 0;
+    var slectionTf = "";
 
-    ans1.addEventListener("click",() => {
-        
+    ans1.addEventListener("click", () => {
+
         slectionTf = ans1.value;
         if (selectionTf == "true") {
-            messageBox[0].innerText = "Great Job!"
-        }
-        else if (id < 5) {
-            id++;
+            messageBox.innerHTML = "Great Job!"
 
+            questions[id]++;
+             for (let i = 0; i < questions.length; i++) {
+                const element = questions[i];
+
+            }
+        }
+        else if (selectionTf == "true") {
+            messageBox.innerHTML = "OH Sorry thats incorrect"
+         questions[id++];
+         time= time -10;
+         for (let i = 0; i < questions.length; i++) {
+            const element = questions[i];
             
+         }       
+            
+
         }
-    })
-    ans2.addEventListener("click",() => {
-        slectionTf = ans2.value;
-    })
-    ans3.addEventListener("click",() => {
-        slectionTf = ans3.value;
-    })
-    ans4.addEventListener("click",() => {
-        slectionTf = ans4.value;
-    })
 
 
 
 
+    })
 }
+ans2.addEventListener("click", () => {
+
+    slectionTf = ans2.value;
+    if (selectionTf == "true") {
+        messageBox.innerHTML = "Great Job!"
+
+        questions[id]++;
+         for (let i = 0; i < questions.length; i++) {
+            const element = questions[i];
+
+        }
+    }
+    else if (selectionTf == "true") {
+        messageBox.innerHTML = "OH Sorry thats incorrect"
+     questions[id++];
+     time= time -10;
+     for (let i = 0; i < questions.length; i++) {
+        const element = questions[i];
+        
+     }       
+        
+
+    }
+
+
+
+
+})
+ans3.addEventListener("click", () => {
+
+    slectionTf = ans3.value;
+    if (selectionTf == "true") {
+        messageBox.innerHTML = "Great Job!"
+
+        questions[id]++;
+         for (let i = 0; i < questions.length; i++) {
+            const element = questions[i];
+
+        }
+    }
+    else if (selectionTf == "true") {
+        messageBox.innerHTML = "OH Sorry thats incorrect"
+     questions[id++];
+     time= time -10;
+     for (let i = 0; i < questions.length; i++) {
+        const element = questions[i];
+        
+     }       
+        
+
+    }
+
+
+
+
+})
+ans4.addEventListener("click", () => {
+
+    slectionTf = ans4.value;
+    if (selectionTf == "true") {
+        messageBox.innerHTML = "Great Job!"
+
+        questions[id]++;
+         for (let i = 0; i < questions.length; i++) {
+            const element = questions[i];
+
+        }
+    }
+    else if (selectionTf == "true") {
+        messageBox.innerHTML = "OH Sorry thats incorrect"
+     questions[id++];
+     time= time -10;
+     for (let i = 0; i < questions.length; i++) {
+        const element = questions[i];
+        
+     }       
+        
+
+    }
+
+
+
+
+})
+
+
+
+
+
+
 
 
 
