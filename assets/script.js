@@ -1,23 +1,42 @@
 
 const questions = [
     {
+        q: 0,
         question: "What is the capital of Alabama?",
-        choices: ["Montgomery", "booleans", "alerts", "numbers"],
-        answer: "alerts"
+        choices: ["Montgomery", "Tide city", "Santa Fe", "Cheyenne"],
+        answer: "Montgomery"
     },
     {
+        q: 1,
         question: "What is the capital of Delaware",
-        choices: ["strings", "booleans", "alerts", "numbers"],
-        answer: "alerts"
+        choices: ["Dover", "Salem", "Augusta", "Lansing"],
+        answer: "Dover"
     },
     {
+        q: 2,
         question: "What is the capital of Illinois",
-        choices: ["strings", "booleans", "alerts", "numbers"],
-        answer: "alerts"
-    }
-
+        choices: ["Springfield", "Olympia", "Pierre", "Raleigh"],
+        answer: "Springfield"
+    },
+    {
+        q: 3,
+        question: "What is the capital of Kentucky",
+        choices: ["Frankfort", "Topeka", "Hartford", "Madison"],
+        answer: "Frankfort"
+    },
+    {
+        q: 4,
+        question: "What is the capital of Iowa",
+        choices: ["Des Moines", "Concord", "Jackson", "Iowanis"],
+        answer: "Des Moines"
+    },
+    {
+        q: 5,
+        question: "What is the capital of New Jersey",
+        choices: ["Trenton", "Newark", "Warren", "Lincoln"],
+        answer: "Trenton"
+    },
 ]
-
 var useranswer = ""
 var correctAnswer = ""
 var time = 60
@@ -37,19 +56,18 @@ function timer() {
             clearInterval(interval)
             //game over//
 
-        } else {time--
+        } else {
+            time--
 
         }
     }, 1000);
 
 }
-// function display(array) {
-//     if (questionNumber<= array.length ) {
-//      correctAnswer = array[questionNumber].answer  
-//      document.querySelector("#questions-container").textContent= array[questionNumber].question
-//      var choices= array[questionNumber].choices
+// function displayq() {
+//     ('questions-container')= questions[0].question }
+
 //      for (let i = 0; i < choices.length; i++) {
-        
+
 //         const abv = document.createElement('button')
 //         abv.setAttribute('class', "btn-prm");
 //         abv.textContent = choices[i]
@@ -57,12 +75,34 @@ function timer() {
 //         // const ele = choices[i];
 //         //a
 //         //
-        
+
 //      }
 //     } else {
-        
+
 //     }
-    
+
+function questionDisplay(id) {
+    var results= document.getElementById("Results");
+    results[0].innerText= "";
+//grabing questioncnt from html
+    var quest = document.getElementById("questions-container");
+// defiing the text of id we pulled to equal question
+    quest.innerText = questions[q].question;
+    // grbing are anwer slots from html and declaring variable
+    var ans1= document.getElementById('ans1');
+    var ans2= document.getElementById('ans2');
+    var ans3= document.getElementById('ans3');
+    var ans4= document.getElementById('ans4');
+// giving a value to the elemnts we pulled 
+    ans1.innerText = questions[q].choices[0]
+    ans1.innerText = questions[q].choices[1]
+    ans1.innerText = questions[q].choices[2]
+    ans1.innerText = questions[q].choices[3]
+
+}
+
+
+
 
 startGame.addEventListener("click", function (event) {
     event.preventDefault()
@@ -70,7 +110,9 @@ startGame.addEventListener("click", function (event) {
     document.getElementById("Quiz-content").classList.add("hide")
     document.getElementById("Gamescreen").classList.remove("hide")
     document.getElementById("Gamescreen").classList.add("show")
-timer()
+    timer()
+
+    // display()
     // if (element.matches(".ans")) {
     //     var state = element.getAttribute("data-state");
 
@@ -89,5 +131,4 @@ timer()
 
     //     }
     // }
-
 });
