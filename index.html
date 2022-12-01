@@ -12,22 +12,33 @@
 
 <body>
     <header id='main-header'>
-    <a href="./highscore.html">High Scores</a>
-    <h4 id="Timer">fdg</h4>
-</header>
-    
-    <div class="Quiz-content">
-            <div class="Rules-questions">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus quasi</div>
-            <div id="Answers" class="hidden button-layout">
-                <button class="ans">ans1</button>
-                <button class="ans">asn2</button>
-                <button class="ans">ans3</button>
-                <button class="ans">ans4</button>
-            </div>
+        <a href="./highscore.html">High Scores</a>
+        <h2 id="Timer">Time: 60</h2>
+    </header>
 
+    <div id="Quiz-content">
+        <div class="Rules-questions">
+            <h1>States and Capitals Quiz.</h1>
+            <h3> Before you begin hears how the game works. You will be givin 60 seconds to answer all 6 questions. If
+                you answer incorrectly you will be deducted 10 seconds from your remaing time.</h3>
         </div>
+        <button id="start-game">Start</button>
+        
+
+    </div>
+    <section id="Gamescreen" class="hide">
+<div id="questions-container">quess</div>
+        <div id="Answers" class="hidden button-layout">
+        <button class="ans" >ans1 </button>
+        <button class="ans" >asn2</button>
+        <button class="ans" >ans3</button>
+        <button class="ans">ans4</button>
+    </div>
+
+    <div id="message"></div>
     
-    
+    </section>
+<script src="./assets/script.js"></script>
 </body>
 
 </html>

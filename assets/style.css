@@ -43,5 +43,21 @@ body {
     padding: 5px;
 
 }
-/* .hidden {
-    display: none; */
+
+#start-game{
+    background-color: yellow;
+    border-radius: 8px;
+    font-size: 2em;
+    letter-spacing: 0.21px;
+    line-height: 16px;
+    max-width: 255px;
+    padding: 20px 52px;
+    text-align: center;
+    margin-top: 0.6em;
+}
+.show{
+    display: block !important;
+}
+.hide{
+    display: none ;
+}
