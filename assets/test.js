@@ -1,60 +1,48 @@
 var messageBox = document.querySelector("#messageBox");
+var quest = document.getElementById('questions-container');
+var startGame = document.querySelector("#start-game")
+var container = document.querySelector("#Answers");
+var ans1 = document.getElementById('ans1');
+var ans2 = document.getElementById('ans2');
+var ans3 = document.getElementById('ans3');
+var ans4 = document.getElementById('ans4');
+
 var questions = [
-
-
-
-
     {
-
         question: "What is the capital of Alabama?",
         choices: ["Montgomery", "Santa Fe", "Tide City", "Cheyenne"],
         answer: "Montgomery"
     },
-
-
     {
-
         question: "What is the capital of Delaware",
         choices: ["Dover", "Salem", "Augusta", "Lansing"],
         answer: "Dover"
     },
-
     {
-
         question: "What is the capital of Illinois",
         choices: ["Springfield", "Olympia", "Pierre", "Raleigh"],
         answer: "Springfield"
     },
     {
-
         question: "What is the capital of Kentucky",
         choices: ["Frankfort", "Topeka", "Hartford", "Madison"],
         answer: "Frankfort"
     },
     {
-
         question: "What is the capital of Iowa",
         choices: ["Des Moines", "Concord", "Jackson", "Iowanis"],
         answer: "Des Moines"
     },
     {
-
         question: "What is the capital of New Jersey",
         choices: ["Trenton", "Newark", "Warren", "Lincoln"],
         answer: "Trenton"
     },
 ]
-var useranswer = ""
-var correctAnswer = ""
 var time = 60
-var interval
+var interval;
 var questionNumber = 0
-var highScore = 0
-
-
-
-var startGame = document.querySelector("#start-game")
-var container = document.querySelector("#Answers");
+var highScore;
 
 function timer() {
     interval = setInterval(() => {
@@ -62,13 +50,10 @@ function timer() {
         if (time <= 0) {
             clearInterval(interval)
             //game over//
-
         } else {
             time--
-
         }
     }, 1000);
-
 }
 // function nextQ() {
 
@@ -89,136 +74,70 @@ function timer() {
 
 //     }
 //function to display questions
-var wR = questions[0].answer;
 function displayQ() {
-
-
+    var wR = questions[questionNumber].answer;
     
-
-    var quest = document.getElementById('questions-container');
     // defiing the text of id we pulled to equal question
-    quest.innerText = questions[0].question;
+    quest.textContent = questions[questionNumber].question;
     // grbing are anwer slots from html and declaring variable
-    var ans1 = document.getElementById('ans1');
-    var ans2 = document.getElementById('ans2');
-    var ans3 = document.getElementById('ans3');
-    var ans4 = document.getElementById('ans4');
+
     // giving a value to the elemnts we pulled 
-    ans1.innerText = questions[0].choices[0];
-    ans2.innerText = questions[0].choices[1];
-    ans3.innerText = questions[0].choices[2];
-    ans4.innerText = questions[0].choices[3];
-
-
-
+    ans1.textContent = questions[questionNumber].choices[0];
+    ans2.textContent = questions[questionNumber].choices[1];
+    ans3.textContent = questions[questionNumber].choices[2];
+    ans4.textContent = questions[questionNumber].choices[3];
     console.log(wR)
-
-    ans1.addEventListener("click", function (event) {
-       event.preventDefault()
-        var x = event.target.innerText
-
-        console.log(x)
-        if (x == wR) {
-            console.log("asdad")
-            questions[0]++
-            for (let i = 0; i < 6 ; i++) {
-                
-
-            }
-        }
-        else
-            messageBox = "thats incorrect"
-        questions++
-        for (let i = 0; i < questions.length; i++) {
-
-
-        }
-
-
-    })
-    ans2.addEventListener("click", function (event) {
-       event.preventDefault()
-        var x = event.target.innerText
-
-        console.log(x)
-        if (x == wR) {
-            console.log("asdad")
-            questions[0]++
-            for (let i = 0; i < 6 ; i++) {
-                
-
-            }
-        }
-        else
-        console.log('aadd')    
-        messageBox = "thats incorrect"
-        questions++
-        for (let i = 0; i < questions.length; i++) {
-
-
-        }
-
-
+}
+function checkCorrectAndIncrementQuestion(userSuppliedAnswer) {
+    console.log(userSuppliedAnswer);
+    if (userSuppliedAnswer === questions[questionNumber].answer) {
+        // user selected the correct answer
+        console.log('correct choice')
+        messageBox.textContent="Correct answer good job"
+        //TODO ACTUALLY DO STUFF HERE
+    } else {
+        // they chose wrong
+        console.log('wrong answer');
+        messageBox.textContent="Wrong answer"
+        //TODO acutally more stuff here
     }
-
-    );
-    ans3.addEventListener("click", function (event) {
-        var x = event.target.innerText
-
-        console.log(x)
-        if (x == wR) {
-            console.log("3right")
-            questions[0]++
-            for (let i = 0; i < 6 ; i++) {
-                
-
-            }
-        }
-        else
-        console.log('3wrg')    
-        messageBox = "thats incorrect"
-        questions++
-        for (let i = 0; i < questions.length; i++) {
-
-
-        }
-
-
+    questionNumber++;
+    if (questionNumber < questions.length) {
+        // theres still more questions to display
+        displayQ()
+    } else {
+        // end the game
     }
-
-    );
-    ans4.addEventListener("click", function (event) {
-        var x = event.target.innerText
-
-        console.log(x)
-        if (x == wR) {
-            console.log("asdad")
-            questions[0]++
-            for (let i = 0; i < 6 ; i++) {
-                
-
-            }
-        }
-        else
-        console.log('aadd')    
-        messageBox = "thats incorrect"
-        questions++
-        for (let i = 0; i < questions.length; i++) {
-
-
-        }
-
-
-    }
-
-    );
-
-
-
-
 
 }
-
+ans1.addEventListener("click", function (event) {
+    event.preventDefault()
+    var userChoice = event.target.textContent; // maybe .textContent
+    console.log(userChoice)
+    checkCorrectAndIncrementQuestion(userChoice);
+    
+ })
+ ans2.addEventListener("click", function (event) {
+    event.preventDefault()
+    var userChoice = event.target.textContent; // maybe .textContent
+    console.log(userChoice)
+    checkCorrectAndIncrementQuestion(userChoice);
+    
+ })
+ ans3.addEventListener("click", function (event) {
+    event.preventDefault()
+    var userChoice = event.target.textContent; // maybe .textContent
+    console.log(userChoice)
+    checkCorrectAndIncrementQuestion(userChoice);
+    
+ })
+ ans4.addEventListener("click", function (event) {
+    event.preventDefault()
+    var userChoice = event.target.textContent; // maybe .textContent
+    console.log(userChoice)
+    checkCorrectAndIncrementQuestion(userChoice);
+    
+ })
 
 startGame.addEventListener("click", function (event) {
     event.preventDefault()
@@ -228,8 +147,6 @@ startGame.addEventListener("click", function (event) {
     document.getElementById("Gamescreen").classList.add("show")
     timer()
     displayQ()
-
-
 });
 
     // } (questions.length < 6) {

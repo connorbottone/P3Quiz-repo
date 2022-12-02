@@ -78,4 +78,4 @@ for (let i = 0; i < choises.length; i++) {
   }
 
 
-  
+  JSON.stringify(event.target)
