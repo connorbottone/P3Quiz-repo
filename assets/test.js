@@ -1,51 +1,47 @@
 var questions = [
+
+
+
+
     {
-        id: 0,
 
         question: "What is the capital of Alabama?",
-        choices: [{ text: "Montgomery", isRight: true },
-        { text: "Tide city", isRight: false },
-        { text: "Santa Fe", isRight: false },
-        { text: "Cheyenne", isRight: false },
-        ]
-
-
+        choices: ["Montgomery", "Santa Fe", "Tide City", "Cheyenne"],
+        answer: "Springfield"
     },
+
+
     {
-        id: 1,
 
         question: "What is the capital of Delaware",
-        choices: [{ text: "Dover", isRight: true },
-        { text: "Salem", isRight: false },
-        { text: "Augusta", isRight: false },
-        { text: "Lansing", isRight: false },
-        ]
-
+        choices: ["Dover", "Salem", "Augusta", "Lansing"],
+        answer: "Dover"
     },
-    // {
 
-    //     question: "What is the capital of Illinois",
-    //     choices: ["Springfield", "Olympia", "Pierre", "Raleigh"],
-    //     answer: "Springfield"
-    // },
-    // {
+    {
 
-    //     question: "What is the capital of Kentucky",
-    //     choices: ["Frankfort", "Topeka", "Hartford", "Madison"],
-    //     answer: "Frankfort"
-    // },
-    // {
+        question: "What is the capital of Illinois",
+        choices: ["Springfield", "Olympia", "Pierre", "Raleigh"],
+        answer: "Springfield"
+    },
+    {
 
-    //     question: "What is the capital of Iowa",
-    //     choices: ["Des Moines", "Concord", "Jackson", "Iowanis"],
-    //     answer: "Des Moines"
-    // },
-    // {
+        question: "What is the capital of Kentucky",
+        choices: ["Frankfort", "Topeka", "Hartford", "Madison"],
+        answer: "Frankfort"
+    },
+    {
 
-    //     question: "What is the capital of New Jersey",
-    //     choices: ["Trenton", "Newark", "Warren", "Lincoln"],
-    //     answer: "Trenton"
-    // },
+        question: "What is the capital of Iowa",
+        choices: ["Des Moines", "Concord", "Jackson", "Iowanis"],
+        answer: "Des Moines"
+    },
+    {
+
+        question: "What is the capital of New Jersey",
+        choices: ["Trenton", "Newark", "Warren", "Lincoln"],
+        answer: "Trenton"
+    },
 ]
 var useranswer = ""
 var correctAnswer = ""
@@ -73,157 +69,55 @@ function timer() {
     }, 1000);
 
 }
+function nextQ() {
 
+    questions[0]++;
+    for (let i = 0; i < questions.length; i++) {
+
+
+    }
+}
+
+//         
+
+
+//         questions++;
+//     for (let i = 0; i < questions.length; i++) {
+//         const element = questions[i];
+//     });
+
+//     }
 //function to display questions
-function displayQ(id) {
+function displayQ() {
 
 
     var messageBox = document.querySelector("messageBox");
-    messageBox.innerText = "";
 
     var quest = document.getElementById('questions-container');
     // defiing the text of id we pulled to equal question
-    quest.innerText = questions[id].question;
+    quest.innerText = questions[0].question;
     // grbing are anwer slots from html and declaring variable
     var ans1 = document.getElementById('ans1');
     var ans2 = document.getElementById('ans2');
     var ans3 = document.getElementById('ans3');
     var ans4 = document.getElementById('ans4');
     // giving a value to the elemnts we pulled 
-    ans1.innerText = questions[id].choices[0].text;
-    ans2.innerText = questions[id].choices[1].text;
-    ans3.innerText = questions[id].choices[2].text;
-    ans4.innerText = questions[id].choices[3].text;
-
-    ans1.value = questions[id].choices[0].isRight;
-    ans2.value = questions[id].choices[1].isRight;
-    ans3.value = questions[id].choices[2].isRight;
-    ans4.value = questions[id].choices[3].isRight;
-
-    var slectionTf = "";
-
-    ans1.addEventListener("click", () => {
-
-        slectionTf = ans1.value;
-        if (selectionTf == "true") {
-            messageBox.innerHTML = "Great Job!"
-
-            questions[id]++;
-             for (let i = 0; i < questions.length; i++) {
-                const element = questions[i];
-
-            }
-        }
-        else if (selectionTf == "true") {
-            messageBox.innerHTML = "OH Sorry thats incorrect"
-         questions[id++];
-         time= time -10;
-         for (let i = 0; i < questions.length; i++) {
-            const element = questions[i];
-            
-         }       
-            
-
-        }
+    ans1.innerText = questions[0].choices[0];
+    ans2.innerText = questions[0].choices[1];
+    ans3.innerText = questions[0].choices[2];
+    ans4.innerText = questions[0].choices[3];
+    wR = questions[0].answer;
 
 
 
 
-    })
+
 }
-ans2.addEventListener("click", () => {
+ans1.addEventListener("click", nextQ,{
+    
+}
 
-    slectionTf = ans2.value;
-    if (selectionTf == "true") {
-        messageBox.innerHTML = "Great Job!"
-
-        questions[id]++;
-         for (let i = 0; i < questions.length; i++) {
-            const element = questions[i];
-
-        }
-    }
-    else if (selectionTf == "true") {
-        messageBox.innerHTML = "OH Sorry thats incorrect"
-     questions[id++];
-     time= time -10;
-     for (let i = 0; i < questions.length; i++) {
-        const element = questions[i];
-        
-     }       
-        
-
-    }
-
-
-
-
-})
-ans3.addEventListener("click", () => {
-
-    slectionTf = ans3.value;
-    if (selectionTf == "true") {
-        messageBox.innerHTML = "Great Job!"
-
-        questions[id]++;
-         for (let i = 0; i < questions.length; i++) {
-            const element = questions[i];
-
-        }
-    }
-    else if (selectionTf == "true") {
-        messageBox.innerHTML = "OH Sorry thats incorrect"
-     questions[id++];
-     time= time -10;
-     for (let i = 0; i < questions.length; i++) {
-        const element = questions[i];
-        
-     }       
-        
-
-    }
-
-
-
-
-})
-ans4.addEventListener("click", () => {
-
-    slectionTf = ans4.value;
-    if (selectionTf == "true") {
-        messageBox.innerHTML = "Great Job!"
-
-        questions[id]++;
-         for (let i = 0; i < questions.length; i++) {
-            const element = questions[i];
-
-        }
-    }
-    else if (selectionTf == "true") {
-        messageBox.innerHTML = "OH Sorry thats incorrect"
-     questions[id++];
-     time= time -10;
-     for (let i = 0; i < questions.length; i++) {
-        const element = questions[i];
-        
-     }       
-        
-
-    }
-
-
-
-
-})
-
-
-
-
-
-
-
-
-
+);
 
 startGame.addEventListener("click", function (event) {
     event.preventDefault()
@@ -232,7 +126,7 @@ startGame.addEventListener("click", function (event) {
     document.getElementById("Gamescreen").classList.remove("hide")
     document.getElementById("Gamescreen").classList.add("show")
     timer()
-    displayQ(id)
+    displayQ()
 
     // display()
     // if (element.matches(".ans")) {
@@ -254,3 +148,123 @@ startGame.addEventListener("click", function (event) {
     //     }
     // }
 });
+
+    // } (questions.length < 6) {
+
+    // }// if (user.choice == questions.choices[0]) {
+    //         messageBox.innerText = "great job"
+
+    //     }startGame.addEventListener("click", function (event)
+
+    //     }
+    //         else if (selectionTf == "true") {
+    //         messageBox.innerHTML = "OH Sorry thats incorrect"
+    //         questions[id++];
+    //         time = time - 10;
+    //         for (let i = 0; i < questions.length; i++) {
+    //             const element = questions[i];
+
+    //         }
+
+
+    //     }
+
+
+
+
+    // })
+    // }
+    // ans2.addEventListener("click", () => {
+
+    //     slectionTf = ans2.value;
+    //     if (selectionTf == "true") {
+    //         messageBox.innerHTML = "Great Job!"
+
+    //         questions[id]++;
+    //         for (let i = 0; i < questions.length; i++) {
+    //             const element = questions[i];
+
+    //         }
+    //     }
+    //     else if (selectionTf == "true") {
+    //         messageBox.innerHTML = "OH Sorry thats incorrect"
+    //         questions[id++];
+    //         time = time - 10;
+    //         for (let i = 0; i < questions.length; i++) {
+    //             const element = questions[i];
+
+    //         }
+
+
+    //     }
+
+
+
+
+    // })
+    // ans3.addEventListener("click", () => {
+
+    //     slectionTf = ans3.value;
+    //     if (selectionTf == "true") {
+    //         messageBox.innerHTML = "Great Job!"
+
+    //         questions[id]++;
+    //         for (let i = 0; i < questions.length; i++) {
+    //             const element = questions[i];
+
+    //         }
+    //     }
+    //     else if (selectionTf == "true") {
+    //         messageBox.innerHTML = "OH Sorry thats incorrect"
+    //         questions[id++];
+    //         time = time - 10;
+    //         for (let i = 0; i < questions.length; i++) {
+    //             const element = questions[i];
+
+    //         }
+
+
+    //     }
+
+
+
+
+    // })
+    // ans4.addEventListener("click", () => {
+
+    //     slectionTf = ans4.value;
+    //     if (selectionTf == "true") {
+    //         messageBox.innerHTML = "Great Job!"
+
+    //         questions[id]++;
+    //         for (let i = 0; i < questions.length; i++) {
+    //             const element = questions[i];
+
+    //         }
+    //     }
+    //     else if (selectionTf == "true") {
+    //         messageBox.innerHTML = "OH Sorry thats incorrect"
+    //         questions[id++];
+    //         time = time - 10;
+    //         for (let i = 0; i < questions.length; i++) {
+    //             const element = questions[i];
+
+    //         }
+
+
+    //     }
+
+
+
+
+    // })
+
+
+
+
+
+
+
+
+
+
