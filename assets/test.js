@@ -1,3 +1,4 @@
+var messageBox = document.querySelector("#messageBox");
 var questions = [
 
 
@@ -69,14 +70,14 @@ function timer() {
     }, 1000);
 
 }
-function nextQ() {
+// function nextQ() {
 
-    questions++;
-    for (let i = 0; i < questions.length; i++) {
+//     questions++;
+//     for (let i = 0; i < questions.length; i++) {
 
 
-    }
-}
+//     }
+// }
 
 //         
 
@@ -92,7 +93,7 @@ var wR = questions[0].answer;
 function displayQ() {
 
 
-    var messageBox = document.querySelector("messageBox");
+    
 
     var quest = document.getElementById('questions-container');
     // defiing the text of id we pulled to equal question
@@ -107,34 +108,112 @@ function displayQ() {
     ans2.innerText = questions[0].choices[1];
     ans3.innerText = questions[0].choices[2];
     ans4.innerText = questions[0].choices[3];
-    
+
 
 
     console.log(wR)
 
-ans1.addEventListener("click", function(event){
-var x =useranswer;
-console.log(x)
-    if (useranswer === wR){
-       messageBox="great job"
+    ans1.addEventListener("click", function (event) {
+       event.preventDefault()
+        var x = event.target.innerText
+
+        console.log(x)
+        if (x == wR) {
+            console.log("asdad")
+            questions[0]++
+            for (let i = 0; i < 6 ; i++) {
+                
+
+            }
+        }
+        else
+            messageBox = "thats incorrect"
         questions++
         for (let i = 0; i < questions.length; i++) {
-            
-            
+
+
         }
-    }
-else 
-messageBox = "thats incorrect"
-questions++
+
+
+    })
+    ans2.addEventListener("click", function (event) {
+       event.preventDefault()
+        var x = event.target.innerText
+
+        console.log(x)
+        if (x == wR) {
+            console.log("asdad")
+            questions[0]++
+            for (let i = 0; i < 6 ; i++) {
+                
+
+            }
+        }
+        else
+        console.log('aadd')    
+        messageBox = "thats incorrect"
+        questions++
         for (let i = 0; i < questions.length; i++) {
-            
-            
+
+
         }
 
 
-}
+    }
 
-);
+    );
+    ans3.addEventListener("click", function (event) {
+        var x = event.target.innerText
+
+        console.log(x)
+        if (x == wR) {
+            console.log("3right")
+            questions[0]++
+            for (let i = 0; i < 6 ; i++) {
+                
+
+            }
+        }
+        else
+        console.log('3wrg')    
+        messageBox = "thats incorrect"
+        questions++
+        for (let i = 0; i < questions.length; i++) {
+
+
+        }
+
+
+    }
+
+    );
+    ans4.addEventListener("click", function (event) {
+        var x = event.target.innerText
+
+        console.log(x)
+        if (x == wR) {
+            console.log("asdad")
+            questions[0]++
+            for (let i = 0; i < 6 ; i++) {
+                
+
+            }
+        }
+        else
+        console.log('aadd')    
+        messageBox = "thats incorrect"
+        questions++
+        for (let i = 0; i < questions.length; i++) {
+
+
+        }
+
+
+    }
+
+    );
+
+
 
 
 
@@ -150,7 +229,7 @@ startGame.addEventListener("click", function (event) {
     timer()
     displayQ()
 
-  
+
 });
 
     // } (questions.length < 6) {
