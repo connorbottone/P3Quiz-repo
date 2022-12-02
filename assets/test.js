@@ -71,7 +71,7 @@ function timer() {
 }
 function nextQ() {
 
-    questions[0]++;
+    questions++;
     for (let i = 0; i < questions.length; i++) {
 
 
@@ -108,13 +108,32 @@ function displayQ() {
     ans4.innerText = questions[0].choices[3];
     wR = questions[0].answer;
 
+    var sel= useranswer
+
 
 
 
 
 }
-ans1.addEventListener("click", nextQ,{
-    
+ans1.addEventListener("click", function(event){
+    var element= event.target
+    if (element === wR){
+       messageBox="great job"
+        question++;
+        for (let i = 0; i < questions.length; i++) {
+            
+            
+        }
+    }
+else 
+messageBox = "thats incorrect"
+questions++;
+        for (let i = 0; i < questions.length; i++) {
+            
+            
+        }
+
+
 }
 
 );
@@ -128,25 +147,7 @@ startGame.addEventListener("click", function (event) {
     timer()
     displayQ()
 
-    // display()
-    // if (element.matches(".ans")) {
-    //     var state = element.getAttribute("data-state");
-
-
-    //     if (state === "hidden") {
-
-    //         element.textContent = element.dataset.number;
-
-    //         element.dataset.state = "visible";
-
-    //     } else {
-
-    //         element.textContent = "";
-
-    //         element.setAttribute("data-state", "hidden")
-
-    //     }
-    // }
+  
 });
 
     // } (questions.length < 6) {
@@ -260,7 +261,25 @@ startGame.addEventListener("click", function (event) {
     // })
 
 
+  // display()
+    // if (element.matches(".ans")) {
+    //     var state = element.getAttribute("data-state");
 
+
+    //     if (state === "hidden") {
+
+    //         element.textContent = element.dataset.number;
+
+    //         element.dataset.state = "visible";
+
+    //     } else {
+
+    //         element.textContent = "";
+
+    //         element.setAttribute("data-state", "hidden")
+
+    //     }
+    // }
 
 
 
