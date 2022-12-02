@@ -7,7 +7,7 @@ var questions = [
 
         question: "What is the capital of Alabama?",
         choices: ["Montgomery", "Santa Fe", "Tide City", "Cheyenne"],
-        answer: "Springfield"
+        answer: "Montgomery"
     },
 
 
@@ -88,6 +88,7 @@ function nextQ() {
 
 //     }
 //function to display questions
+var wR = questions[0].answer;
 function displayQ() {
 
 
@@ -106,20 +107,17 @@ function displayQ() {
     ans2.innerText = questions[0].choices[1];
     ans3.innerText = questions[0].choices[2];
     ans4.innerText = questions[0].choices[3];
-    wR = questions[0].answer;
-
-    var sel= useranswer
+    
 
 
+    console.log(wR)
 
-
-
-}
 ans1.addEventListener("click", function(event){
-    var element= event.target
-    if (element === wR){
+var x =useranswer;
+console.log(x)
+    if (useranswer === wR){
        messageBox="great job"
-        question++;
+        questions++
         for (let i = 0; i < questions.length; i++) {
             
             
@@ -127,7 +125,7 @@ ans1.addEventListener("click", function(event){
     }
 else 
 messageBox = "thats incorrect"
-questions++;
+questions++
         for (let i = 0; i < questions.length; i++) {
             
             
@@ -137,6 +135,11 @@ questions++;
 }
 
 );
+
+
+
+}
+
 
 startGame.addEventListener("click", function (event) {
     event.preventDefault()
