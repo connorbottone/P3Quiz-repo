@@ -1,5 +1,5 @@
 ## Description
-- [Deployed page] :https://connorbottone.github.io/Genpass/
+- [Deployed page] :https://connorbottone.github.io/P3Quiz-repo/
  
  
 -This webpage feauters a six question quiz that the user will be given 60 seconds to complete.
@@ -16,7 +16,6 @@
  
 - [Description](#description)
 - [Usage](#usage)
-- [Credits](#credits)
 - [Author](#author)
 - [Features](#features)
  
@@ -34,13 +33,7 @@ This website provides users with a 6 question long quiz on States and ther Capit
 - They also have the optins to play again and ignore the initial submisson.
 - If the user does choose to enter there initials they will then be brought to a screen to either view the leaderboard or play again.
 
- 
-## Credits
- 
-- ( W3Schools Java for loops : https://www.w3schools.com/java/java_for_loop.asp )
-- (Links within README : https://www.folkstalk.com/2022/09/how-to-create-link-in-readme-md-to-same-file-with-code-examples.html#:~:text=Same%20File%20problem.-,How%20do%20you%20add%20a%20link%20to%20a%20readme%20Md,%2C%20%22(y)%22. )
-- (\n Adding new line : https://www.baeldung.com/java-string-newline#:~:text=In%20Windows%2C%20a%20new%20line,the%20end%20of%20our%20string. )
-- (List of Special characters : https://www.computerhope.com/jargon/s/specchar.htm )
+
  
  
  

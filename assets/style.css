@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     padding: 3%;
-
+background-color: rgb(199, 59, 59);
 }
 
 body {
@@ -37,14 +37,14 @@ body {
 
 }
 
-.Quiz-content {
+.Quiz-content  {
     margin: 14%;
     text-align: center;
     padding: 5px;
 
 }
 
-#start-game{
+#start-game {
     background-color: yellow;
     border-radius: 8px;
     font-size: 2em;
@@ -60,4 +60,10 @@ body {
 }
 .hide{
     display: none ;
+}
+
+h1{
+    text-align: center;
+    color: rgb(48, 48, 4);
+    text-shadow: 12rem;
 }
