@@ -6,7 +6,6 @@ var ans1 = document.getElementById('ans1');
 var ans2 = document.getElementById('ans2');
 var ans3 = document.getElementById('ans3');
 var ans4 = document.getElementById('ans4');
-
 var questions = [
     {
         question: "What is the capital of Alabama?",
@@ -15,12 +14,12 @@ var questions = [
     },
     {
         question: "What is the capital of Delaware",
-        choices: ["Dover", "Salem", "Augusta", "Lansing"],
+        choices: ["Lansing", "Salem", "Augusta", "Dover"],
         answer: "Dover"
     },
     {
         question: "What is the capital of Illinois",
-        choices: ["Springfield", "Olympia", "Pierre", "Raleigh"],
+        choices: ["Olympia", "Springfield", "Pierre", "Raleigh"],
         answer: "Springfield"
     },
     {
@@ -41,8 +40,9 @@ var questions = [
 ]
 var time = 60
 var interval;
-var questionNumber = 0
+var questionNumber = 0;
 var highScore;
+var score = 0;
 
 function timer() {
     interval = setInterval(() => {
@@ -94,21 +94,29 @@ function checkCorrectAndIncrementQuestion(userSuppliedAnswer) {
         // user selected the correct answer
         console.log('correct choice')
         messageBox.textContent="Correct answer good job"
-        //TODO ACTUALLY DO STUFF HERE
+        score++
+        console.log(score)
     } else {
         // they chose wrong
         console.log('wrong answer');
         messageBox.textContent="Wrong answer"
         //TODO acutally more stuff here
+        time= time - 10
     }
     questionNumber++;
     if (questionNumber < questions.length) {
         // theres still more questions to display
         displayQ()
     } else {
-        // end the game
+        endGame()
     }
 
+}
+function endGame() {
+    document.getElementById("Gamescreen").classList.remove("show")
+    document.getElementById("Gamescreen").classList.add("hide")
+    clearInterval(interval)
+    console.log(time)
 }
 ans1.addEventListener("click", function (event) {
     event.preventDefault()
