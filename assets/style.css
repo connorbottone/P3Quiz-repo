@@ -28,6 +28,7 @@ body {
 
 .ans:hover {
     background-color: lightblue;
+    color: black;
 }
 
 .button-layout {
@@ -44,7 +45,7 @@ body {
 
 }
 
-#start-game {
+#start-game  {
     background-color: yellow;
     border-radius: 8px;
     font-size: 2em;
@@ -54,6 +55,10 @@ body {
     padding: 20px 52px;
     text-align: center;
     margin-top: 0.6em;
+}
+#start-game:hover {
+    color: red;
+
 }
 .show{
     display: block !important;
@@ -121,3 +126,17 @@ h1{
         padding-top: 0px;
         color: hsl(206, 17%, 28%);
       }
+      #leaderBoard{
+      background-color: rgb(208, 255, 0);
+      color: aqua;
+      border-radius: 40px;
+      font-size: 2em;
+      /* line-height: 16px; */
+      max-width: 255px;
+      padding: 15px 26px;
+      text-align: center;
+      margin-top: 0.6em;
+    }
+    #leaderBoard:hover{
+        background-color: aliceblue;
+    }

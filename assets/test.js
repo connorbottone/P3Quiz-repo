@@ -126,14 +126,14 @@ function displayMessage(type, message) {
 
 function renderLastRegistered() {
   var initals = localStorage.getItem("initals");
-  var finalscore = localStorage.getItem("time")
+  
   
 
   if (!initals) {
     return;
   }
 
-  highScores.textContent = initals.concat("  Score  " + finalscore);
+  highScores.textContent = initals.concat("  Score of  " + score );
  console.log(highScores.textContent)
 }
 
@@ -142,6 +142,7 @@ function endGame() {
     document.getElementById("Gamescreen").classList.add("hide")
     document.getElementById("GameoverScreen").classList.remove("hide")
     document.getElementById("GameoverScreen").classList.add("show")
+   
     clearInterval(interval)
     console.log(time)
     localStorage.setItem("time",time)
