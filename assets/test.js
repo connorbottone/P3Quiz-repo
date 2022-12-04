@@ -9,7 +9,7 @@ var ans4 = document.getElementById('ans4');
 var submitButton = document.querySelector("#submit");
 var msgDiv = document.querySelector("#msg");
 var highScores = document.querySelector("#highScores");
-
+var leaderboard = document.querySelector('#leaderBoard')
 
 var questions = [
     {
@@ -133,7 +133,7 @@ function renderLastRegistered() {
     return;
   }
 
-  highScores.textContent = initals.concat("  Score of  " + score );
+  highScores.textContent = ("initals :"+initals).concat("  Score of : " + score );
  console.log(highScores.textContent)
 }
 
@@ -166,9 +166,26 @@ function endGame() {
           renderLastRegistered();
         }
       });
+      
 
 }
-
+leaderboard.addEventListener("click", function (event) {
+    event.preventDefault()
+    document.getElementById("highScore").classList.remove("hide")
+    document.getElementById("highScore").classList.add("show")
+    document.getElementById("Quiz-content").classList.remove("show")
+    document.getElementById("Quiz-content").classList.add("hide")
+    document.getElementById("Gamescreen").classList.remove("show")
+    document.getElementById("Gamescreen").classList.add("hide")
+    document.getElementById("GameoverScreen").classList.remove("show")
+    document.getElementById("GameoverScreen").classList.add("hide")
+    clearInterval(interval)
+})
+exitHighscoreButton.addEventListener("click", function (event) {
+    
+    
+    window.location.reload()
+})
 
 ans1.addEventListener("click", function (event) {
     event.preventDefault()
@@ -202,7 +219,7 @@ ans1.addEventListener("click", function (event) {
 startGame.addEventListener("click", function (event) {
     event.preventDefault()
 
-    
+    document.getElementById("Quiz-content").classList.remove("show")
     document.getElementById("Quiz-content").classList.add("hide")
     document.getElementById("Gamescreen").classList.remove("hide")
     document.getElementById("Gamescreen").classList.add("show")
