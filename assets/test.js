@@ -125,17 +125,22 @@ function displayMessage(type, message) {
 }
 
 function renderLastRegistered() {
-  var initals = localStorage.getItem("initals");
+  var initals = JSON.parse(localStorage.getItem("Highscores"));
   
-  
+
 
   if (!initals) {
     return;
   }
-
-  highScores.textContent = ("initals :"+initals).concat("  Score of : " + score );
+  var text= ""
+for (let index = 0; index < initals.length; index++) {
+    text += ("initals :"+initals[index].initals).concat(" : " + initals[index].score + " out of 6 <br>");
+    
+}
+  highScores.innerHTML= text
  console.log(highScores.textContent)
 }
+var hS =JSON.parse(localStorage.getItem("Highscores")) || [];
 
 function endGame() {
     document.getElementById("Gamescreen").classList.remove("show")
@@ -160,12 +165,21 @@ function endGame() {
         }
          else {
           displayMessage("success", "Highscore saved");
-      
-          localStorage.setItem("initals", initals);
-         
+        
+        var data = {
+        initals:initals,
+        score:score,
+        }
+        console.log(hS)
+        hS.push(data);
+         localStorage.setItem("Highscores", JSON.stringify(hS));
+      }
+     
+          
+        
           renderLastRegistered();
         }
-      });
+      );
       
 
 }
