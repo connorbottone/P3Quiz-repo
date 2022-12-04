@@ -115,6 +115,8 @@ function checkCorrectAndIncrementQuestion(userSuppliedAnswer) {
 function endGame() {
     document.getElementById("Gamescreen").classList.remove("show")
     document.getElementById("Gamescreen").classList.add("hide")
+    document.getElementById("GameoverScreen").classList.remove("hide")
+    document.getElementById("GameoverScreen").classList.add("show")
     clearInterval(interval)
     console.log(time)
 }
@@ -150,6 +152,7 @@ ans1.addEventListener("click", function (event) {
 startGame.addEventListener("click", function (event) {
     event.preventDefault()
 
+    
     document.getElementById("Quiz-content").classList.add("hide")
     document.getElementById("Gamescreen").classList.remove("hide")
     document.getElementById("Gamescreen").classList.add("show")
