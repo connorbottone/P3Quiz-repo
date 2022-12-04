@@ -6,6 +6,11 @@ var ans1 = document.getElementById('ans1');
 var ans2 = document.getElementById('ans2');
 var ans3 = document.getElementById('ans3');
 var ans4 = document.getElementById('ans4');
+var submitButton = document.querySelector("#submit");
+var msgDiv = document.querySelector("#msg");
+var highScores = document.querySelector("#highScores");
+
+
 var questions = [
     {
         question: "What is the capital of Alabama?",
@@ -112,6 +117,26 @@ function checkCorrectAndIncrementQuestion(userSuppliedAnswer) {
     }
 
 }
+renderLastRegistered();
+
+function displayMessage(type, message) {
+  msgDiv.textContent = message;
+  msgDiv.setAttribute("class", type);
+}
+
+function renderLastRegistered() {
+  var initals = localStorage.getItem("initals");
+  var finalscore = localStorage.getItem("time")
+  
+
+  if (!initals) {
+    return;
+  }
+
+  highScores.textContent = initals.concat("  Score  " + finalscore);
+ console.log(highScores.textContent)
+}
+
 function endGame() {
     document.getElementById("Gamescreen").classList.remove("show")
     document.getElementById("Gamescreen").classList.add("hide")
@@ -119,7 +144,31 @@ function endGame() {
     document.getElementById("GameoverScreen").classList.add("show")
     clearInterval(interval)
     console.log(time)
+    localStorage.setItem("time",time)
+    submitButton.addEventListener("click", function(event) {
+        event.preventDefault();
+      
+        var initals = document.querySelector("#initals").value;
+      
+      
+        if (initals === "") {
+          displayMessage("error", "No entrey has been made");
+        }
+        else if (initals.length > 2) {
+          displayMessage("error", "Plese enter Just yout initals")
+        }
+         else {
+          displayMessage("success", "Highscore saved");
+      
+          localStorage.setItem("initals", initals);
+         
+          renderLastRegistered();
+        }
+      });
+
 }
+
+
 ans1.addEventListener("click", function (event) {
     event.preventDefault()
     var userChoice = event.target.textContent; // maybe .textContent

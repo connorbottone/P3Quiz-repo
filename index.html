@@ -34,7 +34,7 @@
             <button class="ans" id='ans3'>ans3</button>
             <button class="ans" id='ans4'>ans4</button>
         </div>
-
+cd .
         <div id="messageBox">
             <div class="results"> </div>
         </div>
@@ -42,15 +42,26 @@
     </section>
 
     <section id = "GameoverScreen" class="hide">
-         
-        <div  class="card"  >
-            <div class="card-header">
-              <h2>Game over</h2>
+        <div class="clearfix">
+            <div class="card">
+              <h2>Save Highscore</h2>
+              <form method="POST">
+                <div class="input-group">
+                  <label for="e">Enter your initals</label>
+                  <input type="text"  id="initals" placeholder="Your initals" />
+                </div>
+                <div id="msg"></div>
+                <button id="submit">Submit</button>
+              </form>
             </div>
-            <div class="card-body">
-             <input type="text" name="initials" id="initials" placeholder="Your initials"/>
-              ></textarea>
-            </section>
+            <div class="card">
+              <h2>High Scores:</h2>
+              <p><strong>Email:</strong> <span id="highScores"></span></p>
+              
+            </div>
+          </div>
+        </section>
+        
     <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
     <script src="./assets/test.js"></script>
 </body>
